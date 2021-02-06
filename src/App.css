@@ -1,5 +1,121 @@
 .carousel-container {
-  background-color: lightgreen;
+  position: relative;
+  overflow: hidden;
+  background: lightgreen;;
+}
+
+.carousel {
+  display: flex;
+}
+
+.carousel__content {
+  display: flex;
+  align-items: center;
   width: 100vw;
-  height: 100vh;
+  justify-content: center;
+}
+
+.carousel__content__info {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 10px;
+}
+
+.content-wrap {
+  transition: all 1.2s ease;
+  will-change: transform;
+  position: relative;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.indicator {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  height: 40px;
+}
+
+ul {
+  list-style: none;
+}
+
+.indicator__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 10px;
+  cursor: pointer;
+}
+
+
+
+.indicator__dot[aria-selected="false"] {
+  width: 10px;
+  height: 10px;
+  background-color: lightgray;
+  transition: all .5s ease;
+}
+
+.indicator__dot[aria-selected="true"] {
+  width: 20px;
+  height: 20px;  
+  background-color: black;
+  transition: all .5s ease;
+}
+
+.indicator__dot:hover {
+  background-color: gray;
+}
+
+.carousel__inner {
+  display: flex;
+  transition: all .5s ease;
+}
+
+.arrow {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.arrow button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.arrow--right {
+  right: 50px;
+}
+
+.arrow--left {
+  left: 50px;
+}
+
+.arrow__icon {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  position: relative;
+  width: 15px;
+  height: 15px;
+}
+
+.arrow__icon--left {
+  transform: rotate(135deg);
+}
+
+.arrow__icon--right {
+  transform: rotate(-45deg);
+}
+
+.info {
+  width:300px;
 }
