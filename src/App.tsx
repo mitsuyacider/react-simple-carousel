@@ -10,9 +10,12 @@ import CarouselContent from './components/CarouselContent';
 function App() {
   const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
 
+  // NOTE: Use this value for fade in/out animation.
+  const slideOpacity = (index: number): number => currentSlideIndex === index ? 1 : 0
+
+  // NOTE: Create carousel content list
   const activeSlide = [...Array(5)].map((_: any, index: number) => (
-    // NOTE: Carousel content
-    < div className="content-wrap" key={index}>
+    < div className="content-wrap" key={index} style={{ opacity: slideOpacity(index) }}>
       <CarouselContent />
     </div >
   ));
