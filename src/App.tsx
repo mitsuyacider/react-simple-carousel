@@ -6,6 +6,8 @@ import Indicator from './components/Indicator';
 import ArrowButton from './components/ArrowButton';
 import CarouselContent from './components/CarouselContent';
 
+// NOTE: Set how many slides a carousel contains.
+const SLIDE_NUM: number = 5;
 
 function App() {
   const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
@@ -14,7 +16,7 @@ function App() {
   const slideOpacity = (index: number): number => currentSlideIndex === index ? 1 : 0
 
   // NOTE: Create carousel content list
-  const activeSlide = [...Array(5)].map((_: any, index: number) => (
+  const activeSlide = [...Array(SLIDE_NUM)].map((_: any, index: number) => (
     < div className="content-wrap" key={index} style={{ opacity: slideOpacity(index) }}>
       <CarouselContent />
     </div >
@@ -40,7 +42,7 @@ function App() {
 
   return (
     <>
-      <div className="carousel-container">
+      <div className="carousel-container" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1449034446853-66c86144b0ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80")` }}>
 
         {/* NOTE: Carousel body */}
         <div className="carousel">
