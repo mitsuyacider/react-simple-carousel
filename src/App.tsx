@@ -29,7 +29,11 @@ function App() {
     moveSlide(prev);
   }
 
+  // NOTE: Move slides to a selected slide.
   const moveSlide = (index: number) => setCurrentSlideIndex(index);
+
+  // NOTE: Apply a value for translation towards a selected slide.
+  const translateX = { transform: `translateX(-${currentSlideIndex * 100}vw)` };
 
   return (
     <>
@@ -37,7 +41,7 @@ function App() {
 
         {/* NOTE: Carousel body */}
         <div className="carousel">
-          <div className="carousel__inner">
+          <div className="carousel__inner" style={{ ...translateX }}>
             {activeSlide}
           </div>
         </div>
