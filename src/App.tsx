@@ -1,5 +1,8 @@
-import './Reset.css'
+import './Reset.css';
 import './App.css';
+
+import Indicator from './components/Indicator';
+
 
 function App() {
   return (
@@ -25,12 +28,7 @@ function App() {
         </div>
 
         {/* NOTE: Indicator */}
-        <ul className="indicator">
-          <li className="indicator__dot" role="dot" aria-selected="true"></li>
-          <li className="indicator__dot" role="dot" aria-selected="false"></li>
-          <li className="indicator__dot" role="dot" aria-selected="false"></li>
-          <li className="indicator__dot" role="dot" aria-selected="false"></li>
-        </ul>
+        <Indicator numberOfDots={4} currentIndex={0} />
 
         {/* NOTE: Controller */}
         <div className="arrow arrow--left">
