@@ -1,11 +1,14 @@
 import './Reset.css';
 import './App.css';
 
+import * as React from "react";
 import Indicator from './components/Indicator';
 import ArrowButton from './components/ArrowButton';
-
+import CarouselContent from './components/CarouselContent';
 
 function App() {
+  const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
+
   return (
     <>
       <div className="carousel-container">
@@ -16,13 +19,7 @@ function App() {
 
             {/* NOTE: Carousel content */}
             <div className="content-wrap">
-              <div className="carousel__content">
-                <div className="carousel__content__info info">
-                  <h1 className="info__title">Title</h1>
-                  <p className="info__description">This is a simple carousel. This is a simple carousel. This is a simple carousel. This is a simple carousel.</p>
-                </div>
-                <img src="https://via.placeholder.com/400/000000/ffffff" alt="slide content" />
-              </div>
+              <CarouselContent />
             </div>
 
           </div>
