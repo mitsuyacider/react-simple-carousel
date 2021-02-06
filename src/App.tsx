@@ -11,11 +11,25 @@ function App() {
   const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
 
   const activeSlide = [...Array(5)].map((_: any, index: number) => (
-    //NOTE: Carousel content
+    // NOTE: Carousel content
     < div className="content-wrap" key={index}>
       <CarouselContent />
     </div >
   ));
+
+  const totalSlide: number = activeSlide.length;
+
+  const nextSlide = () => {
+    const next: number = (currentSlideIndex - 1 + totalSlide) % totalSlide;
+    moveSlide(next);
+  }
+
+  const prevSlide = () => {
+    const prev: number = (currentSlideIndex + 1) % totalSlide;
+    moveSlide(prev);
+  }
+
+  const moveSlide = (index: number) => setCurrentSlideIndex(index);
 
   return (
     <>
@@ -29,11 +43,11 @@ function App() {
         </div>
 
         {/* NOTE: Indicator */}
-        <Indicator numberOfDots={activeSlide.length} currentIndex={currentSlideIndex} />
+        <Indicator numberOfDots={totalSlide} currentIndex={currentSlideIndex} />
 
         {/* NOTE: Controller */}
-        <ArrowButton direction="left" onClick={() => console.log('on click left')} />
-        <ArrowButton direction="right" onClick={() => console.log('on click right')} />
+        <ArrowButton direction="left" onClick={nextSlide} />
+        <ArrowButton direction="right" onClick={prevSlide} />
 
       </div>
     </>
