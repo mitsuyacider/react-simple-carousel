@@ -50,7 +50,7 @@ function App() {
         </div>
 
         {/* NOTE: Indicator */}
-        <Indicator numberOfDots={totalSlide} currentIndex={currentSlideIndex} />
+        <Indicator onSelectedDot={moveSlide} numberOfDots={totalSlide} currentIndex={currentSlideIndex} />
 
         {/* NOTE: Controller */}
         <ArrowButton direction="left" onClick={nextSlide} />

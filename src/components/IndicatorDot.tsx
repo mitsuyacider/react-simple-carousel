@@ -1,10 +1,11 @@
 interface IndicatorDotProps {
   isSelected: boolean,
+  onClick: () => void
 };
 
-const IndicatorDot = ({ isSelected }: IndicatorDotProps) => {
+const IndicatorDot = ({ isSelected, onClick }: IndicatorDotProps) => {
   return (
-    <li className="indicator__dot" role="dot" aria-selected={isSelected}></li>
+    <li className="indicator__dot" onClick={onClick} role="dot" aria-selected={isSelected}></li>
   )
 };
 
