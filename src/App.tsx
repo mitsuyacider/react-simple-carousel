@@ -2,6 +2,7 @@ import './Reset.css';
 import './App.css';
 
 import Indicator from './components/Indicator';
+import ArrowButton from './components/ArrowButton';
 
 
 function App() {
@@ -31,12 +32,9 @@ function App() {
         <Indicator numberOfDots={4} currentIndex={0} />
 
         {/* NOTE: Controller */}
-        <div className="arrow arrow--left">
-          <button><i className="arrow__icon arrow__icon--left"></i></button>
-        </div>
-        <div className="arrow arrow--right">
-          <button><i className="arrow__icon arrow__icon--right"></i></button>
-        </div>
+        <ArrowButton direction="left" onClick={() => console.log('on click left')} />
+        <ArrowButton direction="right" onClick={() => console.log('on click right')} />
+
       </div>
     </>
   );
